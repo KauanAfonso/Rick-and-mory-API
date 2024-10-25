@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    background-image: url('https://wallpapercave.com/wp/wp2486295.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container{
+    max-width: 800px;
+    margin: auto ;
+    /* display: flex;
+    /* align-items: center;
+    justify-content: center; */ 
+    
+}
+
+.area {
+    background-color: aliceblue;
+    display: flex;
+    padding: 1rem;
+    gap: 8rem;
+}
