@@ -72,6 +72,13 @@ html{
 }
 
 @media (max-width: 768px) {
+
+    html{
+        background-image: url('https://wallpapers.com/images/hd/portal-exit-rick-and-morty-phone-xxg8r7q3qr86y41i.jpg');
+        height: 100% !important;
+    }
+
+
     #title {
         font-size: 2.5em;
     }
@@ -92,11 +99,6 @@ html{
 }
 
 @media (max-width: 480px) {
-
-    html{
-        background-image: url('https://wallpapers.com/images/hd/portal-exit-rick-and-morty-phone-xxg8r7q3qr86y41i.jpg');
-       
-    }
 
     #title {
         font-size: 2em;
