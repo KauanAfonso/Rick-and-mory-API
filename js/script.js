@@ -1,8 +1,3 @@
-// document.getElementById('imagem')
-// document.getElementById('nome')
-// document.getElementById('status')
-// document.getElementById('especie')
-
 area = document.getElementById('area')
 
 const adicionarElementos = (foto, nome, status, localizacao,  genero , especie, nomeEp, episodio) =>{
