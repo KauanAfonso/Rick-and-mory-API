@@ -26,34 +26,42 @@ const adicionarElementos = (foto, nome, status, localizacao,  genero , especie, 
     `
 }
 
-const elementoFetch = (url, urlEpisodio)=>{
-     
-fetch(url)
-.then((results) =>{
-    return results.json()
-})
-.then((data) =>{
+async function elementoFetch(url, urlEpisodio){
 
-    fetch(urlEpisodio)
-    .then((results) =>{
-        return results.json()
-    })
-    .then((dataEpisode) =>{
-        console.log(dataEpisode.results)
-        console.log(dataEpisode.name)
-        adicionarElementos(data.image, data.name , data.status , data.location.name,  data.gender,  data.species , dataEpisode.name , dataEpisode
-            .episode)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-    
-})
-.catch((err) => {
-    console.log(err)
-})
+
+try{
+
+    const response = await fetch(url)
+    const response_episodio = await fetch(urlEpisodio)
+
+    if(!response.ok && !response_episodio.ok){
+        throw new Error("Erro na requisão ")
+    }
+
+    const data = await response.json()
+    const dataEpisode = response_episodio.json()
+
+    if(dataEpisode.name === undefined && dataEpisode.episode === undefined){
+        dataEpisode.name = "Não encontrado" , dataEpisode.episode = "Não encontrado"
+    }
+
+    adicionarElementos(data.image, data.name , data.status , data.location.name,  data.gender,  data.species , dataEpisode.name , dataEpisode.episode)
+
+}catch(error){
+    p_error = document.getElementById('error').innerText = `Algo deu errado: ${error}`
+}
+
 
 }
+
+
+
+
+
+
+
+
+
 
 formulario = document.getElementById("Btn_formulario")
 
