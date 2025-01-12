@@ -1,5 +1,7 @@
-area = document.getElementById('area')
+let area = document.getElementById('area')
+let formulario = document.getElementById("Btn_formulario")
 
+//função para adicionar card
 const adicionarElementos = (foto, nome, status, localizacao,  genero , especie, nomeEp, episodio) =>{
     area.innerHTML = `
 
@@ -26,6 +28,8 @@ const adicionarElementos = (foto, nome, status, localizacao,  genero , especie, 
     `
 }
 
+
+//funcção para consumo de API
 async function elementoFetch(url, urlEpisodio){
 
 
@@ -55,16 +59,7 @@ try{
 }
 
 
-
-
-
-
-
-
-
-
-formulario = document.getElementById("Btn_formulario")
-
+//Chamando funções com DOM
 formulario.addEventListener('click' , (ev)=>{
 
     ev.preventDefault()
