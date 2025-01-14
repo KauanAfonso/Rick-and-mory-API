@@ -38,7 +38,7 @@ try{
     const response = await fetch(url)
     const response_episodio = await fetch(urlEpisodio)
 
-    if(!response.ok && !response_episodio.ok){
+    if(!response.ok || !response_episodio.ok){
         throw new Error("Erro na requisão ")
     }
 
